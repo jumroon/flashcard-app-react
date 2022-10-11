@@ -5,7 +5,7 @@ import Deck from "./Deck";
 import { listDecks } from "../utils/api";
 
 function Layout() {
-  const [decks, setDecks] = useState();
+  const [decks, setDecks] = useState([]);
 
   useEffect(() => {
     async function callListOfDecks() {
@@ -15,14 +15,16 @@ function Layout() {
     callListOfDecks();
   }, []);
 
-  console.log(decks);
+  const deckNames = decks.map((deck, index) => (
+    <Deck deckName={deck.name} listOfCards={deck.cards} key={index} />
+  ));
 
   return (
     <>
       <Header />
       <div className="container">
         <button>+ Create deck</button>
-        <Deck />
+        {deckNames}
         <NotFound />
       </div>
     </>

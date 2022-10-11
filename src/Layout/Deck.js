@@ -1,10 +1,10 @@
 import React from "react";
 
-export default function Deck() {
+export default function Deck({ deckName, listOfCards }) {
   return (
     <>
-      <h1>This is a deck</h1>
-      <i className="bi bi-trash"> Trash Button</i>
+      <h1>{deckName}</h1>
+      <h2>{listOfCards.length} cards</h2>
     </>
   );
 }
