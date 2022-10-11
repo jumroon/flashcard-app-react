@@ -1,9 +1,22 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Header from "./Header";
 import NotFound from "./NotFound";
 import Deck from "./Deck";
+import { listDecks } from "../utils/api";
 
 function Layout() {
+  const [decks, setDecks] = useState();
+
+  useEffect(() => {
+    async function callListOfDecks() {
+      const listOfDecks = await listDecks();
+      setDecks(listOfDecks);
+    }
+    callListOfDecks();
+  }, []);
+
+  console.log(decks);
+
   return (
     <>
       <Header />
