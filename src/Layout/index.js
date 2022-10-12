@@ -4,6 +4,7 @@ import NotFound from "./NotFound";
 
 import { Route, Switch } from "react-router-dom";
 import { HomePage } from "./HomePage";
+import { CardsPage } from "./CardsPage";
 
 function Layout() {
   return (
@@ -13,6 +14,9 @@ function Layout() {
         <Switch>
           <Route exact path="/">
             <HomePage />
+          </Route>
+          <Route path="/decks/:deckId">
+            <CardsPage />
           </Route>
           <Route>
             <NotFound />
