@@ -3,6 +3,7 @@ import Header from "./Header";
 import NotFound from "./NotFound";
 import Deck from "./Deck";
 import { listDecks } from "../utils/api";
+import { Route, Switch } from "react-router-dom";
 
 function Layout() {
   const [decks, setDecks] = useState([]);
@@ -23,9 +24,17 @@ function Layout() {
     <>
       <Header />
       <div className="container">
-        <button>+ Create deck</button>
-        {deckNames}
-        <NotFound />
+        <Switch>
+          <Route exact path="/">
+            <div>
+              <button>+ Create deck</button>
+              {deckNames}
+            </div>
+          </Route>
+          <Route>
+            <NotFound />
+          </Route>
+        </Switch>
       </div>
     </>
   );
