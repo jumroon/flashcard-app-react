@@ -21,13 +21,17 @@ export function DeckPage() {
   }
 
   const cards = deck.cards;
-  const cardFronts = cards.map((card, index) => (
-    <div style={{ marginTop: 100 }}>
-      <h2 key={index}>{card.front}</h2>
-      <button>DELETE</button>
-      <button>Edit</button>
-    </div>
-  ));
+  const cardFronts = cards.map((card, index) => {
+    console.log("CARD LABEL", card);
+    return (
+      <div key={index} style={{ marginTop: 100 }}>
+        <h2>{card.front}</h2>
+        <h2>{card.back}</h2>
+        <button>DELETE</button>
+        <button>Edit</button>
+      </div>
+    );
+  });
 
   return (
     <div>
