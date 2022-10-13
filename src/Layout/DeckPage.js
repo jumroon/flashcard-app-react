@@ -21,9 +21,8 @@ export function DeckPage() {
   }
 
   const cards = deck.cards;
-  const cardName = cards[0];
-  const cardFront = cards.map((card, index) => (
-    <div>
+  const cardFronts = cards.map((card, index) => (
+    <div style={{ marginTop: 100 }}>
       <h2 key={index}>{card.front}</h2>
       <button>DELETE</button>
       <button>Edit</button>
@@ -36,7 +35,7 @@ export function DeckPage() {
       {/* may need to move deck description to a different component later*/}
       <h2>{deck.description}</h2>
       <div>
-        <h2>{cardFront}</h2>
+        <h2>{cardFronts}</h2>
       </div>
     </div>
   );
