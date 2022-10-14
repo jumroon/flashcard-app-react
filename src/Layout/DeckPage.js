@@ -23,12 +23,12 @@ export function DeckPage() {
   const cardFronts = cards.map((card, index) => {
     console.log("CARD LABEL", card);
     return (
-      <div key={index} style={{ marginTop: 100 }}>
+      <form key={index} style={{ marginTop: 100 }}>
         <h2>{card.front}</h2>
         <h2>{card.back}</h2>
         <button>DELETE</button>
         <button>Edit</button>
-      </div>
+      </form>
     );
   });
 
