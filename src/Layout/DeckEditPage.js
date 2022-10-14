@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { updateDeck } from "../utils/api";
+import { readDeck } from "../utils/api";
 
 export function DeckEditPage() {
   const [deck, setDeck] = useState();
@@ -8,19 +8,22 @@ export function DeckEditPage() {
 
   useEffect(() => {
     async function getDeck() {
-      const deckWeWant = await updateDeck(deckId);
-      setDeck(deckWeWant);
+      const newDeck = await readDeck(deckId);
+      setDeck(newDeck);
     }
     getDeck();
   }, []);
 
+  if (!deck) {
+    return <div>LOADING...</div>;
+  }
+
   return (
-    <>
-      <h1>Welcome to the deck editing page lol</h1>
+    <div>
       <h2>Name</h2>
-      <input type="text"></input>
+      <input type="text" id="name"></input>
       <h2>Description</h2>
-      <input type="textArea"></input>
-    </>
+      <textarea id="description"></textarea>
+    </div>
   );
 }
