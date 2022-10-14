@@ -22,7 +22,6 @@ export function DeckPage() {
 
   const cards = deck.cards;
   const cardFronts = cards.map((card, index) => {
-    console.log("CARD LABEL", card);
     return (
       <form key={index} style={{ marginTop: 100 }}>
         <h2>{card.front}</h2>
