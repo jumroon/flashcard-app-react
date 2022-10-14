@@ -110,7 +110,7 @@ describe("Decks", () => {
     expect(textAreas).toHaveLength(1);
   });
 
-  test.only("route for /decks/:deckId/edit", async () => {
+  test("route for /decks/:deckId/edit", async () => {
     const mockDeck = {
       name: "Mock Deck 33",
       description: "MD33",
@@ -135,7 +135,7 @@ describe("Decks", () => {
     expect(descriptionInput).toBeTruthy();
   });
 
-  test("route for /decks/:deckId/cards/new", async () => {
+  test.only("route for /decks/:deckId/cards/new", async () => {
     const mockDeck = {
       name: "Mock squash",
       description: "MS",

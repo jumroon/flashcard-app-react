@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { updateDeck, readDeck, createDeck } from "../utils/api";
+import { DeckForm } from "./DeckForm";
 import { LoadingIndicator } from "./LoadingIndicator";
 
 export function DeckEditPage() {
@@ -19,12 +20,5 @@ export function DeckEditPage() {
     return <LoadingIndicator />;
   }
 
-  return (
-    <div>
-      <h2>Name</h2>
-      <input type="text" id="name" value={deck.name}></input>
-      <h2>Description</h2>
-      <textarea id="description" value={deck.description}></textarea>
-    </div>
-  );
+  return <DeckForm deck={deck} />;
 }
