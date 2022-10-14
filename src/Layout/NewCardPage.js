@@ -1,21 +1,10 @@
-import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
-import { readDeck } from "../utils/api";
+import React from "react";
 import { Breadcrumbs } from "./Breadcrumbs";
 import { LoadingIndicator } from "./LoadingIndicator";
+import { useReadDeck } from "../utils/hooks";
 
 export function NewCardPage() {
-  const [deck, setDeck] = useState();
-  const { deckId } = useParams();
-
-  useEffect(() => {
-    async function getDeck() {
-      const newDeck = await readDeck(deckId);
-      setDeck(newDeck);
-      console.log(newDeck);
-    }
-    getDeck();
-  }, []);
+  const deck = useReadDeck();
 
   if (!deck) {
     return <LoadingIndicator />;
