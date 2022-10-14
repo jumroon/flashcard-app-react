@@ -9,6 +9,8 @@ export function DeckForm({ deck }) {
       <input type="text" id="name" value={deck.name}></input>
       <h2>Description</h2>
       <textarea id="description" value={deck.description}></textarea>
+      <button>Cancel</button>
+      <button>submit</button>
     </form>
   );
 }
