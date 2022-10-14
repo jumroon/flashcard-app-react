@@ -22,9 +22,9 @@ export function DeckEditPage() {
   return (
     <div>
       <h2>Name</h2>
-      <input type="text" id="name"></input>
+      <input type="text" id="name" value={deck.name}></input>
       <h2>Description</h2>
-      <textarea id="description"></textarea>
+      <textarea id="description" value={deck.description}></textarea>
     </div>
   );
 }
