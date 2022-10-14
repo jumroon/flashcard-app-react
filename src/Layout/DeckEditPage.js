@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { readDeck } from "../utils/api";
+import { updateDeck, readDeck, createDeck } from "../utils/api";
+import { LoadingIndicator } from "./LoadingIndicator";
 
 export function DeckEditPage() {
   const [deck, setDeck] = useState();
@@ -15,7 +16,7 @@ export function DeckEditPage() {
   }, []);
 
   if (!deck) {
-    return <div>LOADING...</div>;
+    return <LoadingIndicator />;
   }
 
   return (

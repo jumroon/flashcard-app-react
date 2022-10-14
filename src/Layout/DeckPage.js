@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { readDeck } from "../utils/api";
+import { LoadingIndicator } from "./LoadingIndicator";
 
 export function DeckPage() {
   const [deck, setDeck] = useState();
@@ -16,7 +17,7 @@ export function DeckPage() {
   }, []);
 
   if (!deck) {
-    return <div>LOADING...</div>;
+    return <LoadingIndicator />;
   }
 
   const cards = deck.cards;
