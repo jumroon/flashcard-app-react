@@ -59,7 +59,7 @@ describe("Decks", () => {
     });
   });
 
-  test.only("route for /decks/:deckId", async () => {
+  test("route for /decks/:deckId", async () => {
     const mockDeck = {
       name: "Mock Deck 3",
       description: "MD",
@@ -110,7 +110,7 @@ describe("Decks", () => {
     expect(textAreas).toHaveLength(1);
   });
 
-  test("route for /decks/:deckId/edit", async () => {
+  test.only("route for /decks/:deckId/edit", async () => {
     const mockDeck = {
       name: "Mock Deck 33",
       description: "MD33",
