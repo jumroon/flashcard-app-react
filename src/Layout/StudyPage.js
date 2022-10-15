@@ -15,7 +15,10 @@ export function StudyPage() {
 
   return (
     <>
-      <h1>Study: {deck.name}</h1>
+      <h1>
+        <span>Study: </span>
+        <span>{deck.name}</span>
+      </h1>
       <h2>
         Card {currentCardIndex + 1} of {deck.cards.length}
       </h2>
