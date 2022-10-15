@@ -5,7 +5,7 @@ import { LoadingIndicator } from "./LoadingIndicator";
 export function StudyPage() {
   const deck = useReadDeck();
   const [flipped, setFlipped] = useState(false);
-  const currentCardIndex = 0;
+  const [currentCardIndex, setCurrentCardIndex] = useState(0);
 
   if (!deck) {
     return <LoadingIndicator />;
@@ -23,7 +23,16 @@ export function StudyPage() {
         Card {currentCardIndex + 1} of {deck.cards.length}
       </h2>
       <div>{flipped ? cardWeWant.back : cardWeWant.front}</div>
-      <button onClick={() => setFlipped(true)}>FLIP</button>
+      {!flipped && <button onClick={() => setFlipped(true)}>FLIP</button>}
+      {flipped && (
+        <button
+          onClick={() => {
+            setCurrentCardIndex(currentCardIndex + 1);
+            setFlipped(false);
+          }}>
+          next
+        </button>
+      )}
     </>
   );
 }
