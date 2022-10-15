@@ -12,6 +12,15 @@ export function StudyPage() {
     return <LoadingIndicator />;
   }
 
+  if (deck.cards.length < 2) {
+    return (
+      <>
+        <h1>{deck.name}</h1>
+        <div>Not enough cards</div>
+      </>
+    );
+  }
+
   const cardWeWant = deck.cards[currentCardIndex];
 
   const isLastCard = currentCardIndex === deck.cards.length - 1;
