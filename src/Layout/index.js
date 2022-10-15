@@ -8,6 +8,7 @@ import { NewDeckPage } from "./NewDeckPage";
 import { DeckEditPage } from "./DeckEditPage";
 import { NewCardPage } from "./NewCardPage";
 import { CardEditPage } from "./CardEditPage";
+import { StudyPage } from "./StudyPage";
 
 function Layout() {
   return (
@@ -23,6 +24,9 @@ function Layout() {
           </Route>
           <Route exact path="/decks/:deckId/cards/:cardId/edit">
             <CardEditPage />
+          </Route>
+          <Route exact path="/decks/:deckId/study">
+            <StudyPage />
           </Route>
           <Route exact path="/decks/:deckId/cards/new">
             <NewCardPage />
