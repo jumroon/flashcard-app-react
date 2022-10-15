@@ -13,6 +13,8 @@ export function StudyPage() {
 
   const cardWeWant = deck.cards[currentCardIndex];
 
+  const isLastCard = currentCardIndex === deck.cards.length - 1;
+
   return (
     <>
       <h1>
@@ -24,7 +26,7 @@ export function StudyPage() {
       </h2>
       <div>{flipped ? cardWeWant.back : cardWeWant.front}</div>
       {!flipped && <button onClick={() => setFlipped(true)}>FLIP</button>}
-      {flipped && (
+      {flipped && !isLastCard && (
         <button
           onClick={() => {
             setCurrentCardIndex(currentCardIndex + 1);
@@ -32,6 +34,13 @@ export function StudyPage() {
           }}>
           next
         </button>
+      )}
+      {isLastCard && flipped && (
+        <>
+          <div>Do you want to restart the deck?</div>
+          <button>Yes</button>
+          <button>Return Home</button>
+        </>
       )}
     </>
   );
