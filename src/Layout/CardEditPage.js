@@ -16,5 +16,13 @@ export function CardEditPage() {
   const cardWeWant = deck.cards.find((card) => card.id == cardId);
   console.log(cardWeWant);
 
-  return <div> super happy fun card editing </div>;
+  return (
+    <>
+      <h1>Edit Card</h1>
+      <h3>Front</h3>
+      <textarea value={cardWeWant.front}></textarea>
+      <h3>Back</h3>
+      <textarea value={cardWeWant.back}></textarea>
+    </>
+  );
 }

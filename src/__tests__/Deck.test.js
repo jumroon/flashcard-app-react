@@ -135,7 +135,7 @@ describe("Decks", () => {
     expect(descriptionInput).toBeTruthy();
   });
 
-  test.only("route for /decks/:deckId/cards/new", async () => {
+  test("route for /decks/:deckId/cards/new", async () => {
     const mockDeck = {
       name: "Mock squash",
       description: "MS",
@@ -164,7 +164,7 @@ describe("Decks", () => {
     expect(textAreas).toHaveLength(2);
   });
 
-  test("route for /decks/:deckId/cards/:cardId/edit", async () => {
+  test.only("route for /decks/:deckId/cards/:cardId/edit", async () => {
     const cardTen = {
       id: 10,
       front: "What did the left eye say to the right eye?",
