@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useReadDeck } from "../utils/hooks";
 import { LoadingIndicator } from "./LoadingIndicator";
+import { Link } from "react-router-dom";
 
 export function StudyPage() {
   const deck = useReadDeck();
@@ -38,8 +39,16 @@ export function StudyPage() {
       {isLastCard && flipped && (
         <>
           <div>Do you want to restart the deck?</div>
-          <button>Yes</button>
-          <button>Return Home</button>
+          <button
+            onClick={() => {
+              setCurrentCardIndex(0);
+              setFlipped(false);
+            }}>
+            Yes
+          </button>
+          <Link to="/">
+            <button>Return Home</button>
+          </Link>
         </>
       )}
     </>
