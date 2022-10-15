@@ -1,13 +1,13 @@
 import React from "react";
 import Header from "./Header";
 import NotFound from "./NotFound";
-
 import { Route, Switch } from "react-router-dom";
 import { HomePage } from "./HomePage";
 import { DeckPage } from "./DeckPage";
 import { NewDeckPage } from "./NewDeckPage";
 import { DeckEditPage } from "./DeckEditPage";
 import { NewCardPage } from "./NewCardPage";
+import { CardEditPage } from "./CardEditPage";
 
 function Layout() {
   return (
@@ -20,6 +20,9 @@ function Layout() {
           </Route>
           <Route exact path="/decks/new">
             <NewDeckPage />
+          </Route>
+          <Route exact path="/decks/:deckId/cards/:cardId/edit">
+            <CardEditPage />
           </Route>
           <Route exact path="/decks/:deckId/cards/new">
             <NewCardPage />
