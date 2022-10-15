@@ -1,16 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import { useReadDeck } from "../utils/hooks";
 import { LoadingIndicator } from "./LoadingIndicator";
 
 export function StudyPage() {
   const deck = useReadDeck();
+  const [flipped, setFlipped] = useState(false);
   const currentCardIndex = 0;
 
   if (!deck) {
     return <LoadingIndicator />;
   }
-
-  console.log(deck.cards.length);
 
   const cardWeWant = deck.cards[currentCardIndex];
 
@@ -20,7 +19,8 @@ export function StudyPage() {
       <h2>
         Card {currentCardIndex + 1} of {deck.cards.length}
       </h2>
-      <div>{cardWeWant.front}</div>
+      <div>{flipped ? cardWeWant.back : cardWeWant.front}</div>
+      <button onClick={() => setFlipped(true)}>FLIP</button>
     </>
   );
 }
