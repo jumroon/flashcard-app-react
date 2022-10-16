@@ -12,9 +12,7 @@ export function CardEditPage() {
     return <LoadingIndicator />;
   }
 
-  console.log(cardId);
   const cardWeWant = deck.cards.find((card) => card.id == cardId);
-  console.log(cardWeWant);
 
   return (
     <>
