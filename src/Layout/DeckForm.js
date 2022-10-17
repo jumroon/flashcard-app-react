@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { readDeck } from "../utils/api";
 
-export function DeckForm({ deck, onSubmit, handleChange }) {
+export function DeckForm({ deck, onSubmit, handleChange, onCancel }) {
   return (
     <form
       onSubmit={(event) => {
@@ -20,7 +20,7 @@ export function DeckForm({ deck, onSubmit, handleChange }) {
         id="description"
         value={deck.description}
         onChange={handleChange}></textarea>
-      <button>Cancel</button>
+      <button onClick={onCancel}>Cancel</button>
       <button>Submit</button>
     </form>
   );

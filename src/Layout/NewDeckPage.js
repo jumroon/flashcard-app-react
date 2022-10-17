@@ -15,6 +15,10 @@ export function NewDeckPage() {
     history.push(`/decks/${createdDeck.id}`);
   }
 
+  function onCancel() {
+    history.push(`/`);
+  }
+
   const handleChange = (event) => {
     const { target } = event;
     setDeck({ ...deck, [target.id]: target.value });
@@ -23,7 +27,12 @@ export function NewDeckPage() {
   return (
     <>
       <h1> Create Deck</h1>
-      <DeckForm deck={deck} onSubmit={onSubmit} handleChange={handleChange} />
+      <DeckForm
+        deck={deck}
+        onSubmit={onSubmit}
+        handleChange={handleChange}
+        onCancel={onCancel}
+      />
     </>
   );
 }
