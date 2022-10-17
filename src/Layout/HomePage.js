@@ -19,14 +19,22 @@ export function HomePage() {
   const deckNames = decks.map((deck, index) => (
     <>
       <Deck deckName={deck.name} listOfCards={deck.cards} key={index} />
-      <Link to={`/decks/${index + 1}/study`}>Study</Link>
-      <Link to={`/decks/${index + 1}/edit`}> Edit</Link>
+      <Link to={`/decks/${index + 1}/study`}>
+        <button>Study</button>
+      </Link>
+
+      <Link to={`/decks/${index + 1}/edit`}>
+        <button>Edit</button>
+      </Link>
     </>
   ));
 
   return (
     <>
-      <button>+ Create deck</button>
+      <Link to={"/decks/new"}>
+        <button>+ Create deck</button>
+      </Link>
+
       {deckNames}
     </>
   );
