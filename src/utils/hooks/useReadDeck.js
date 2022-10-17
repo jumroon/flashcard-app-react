@@ -14,5 +14,5 @@ export const useReadDeck = () => {
     getDeck();
   }, []);
 
-  return deck;
+  return [deck, setDeck];
 };

@@ -6,7 +6,7 @@ import { useParams } from "react-router-dom";
 export function CardEditPage() {
   const { cardId } = useParams();
 
-  const deck = useReadDeck();
+  const [deck] = useReadDeck();
 
   if (!deck) {
     return <LoadingIndicator />;

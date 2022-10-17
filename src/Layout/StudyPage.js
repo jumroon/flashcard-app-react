@@ -4,7 +4,7 @@ import { LoadingIndicator } from "./LoadingIndicator";
 import { Link } from "react-router-dom";
 
 export function StudyPage() {
-  const deck = useReadDeck();
+  const [deck] = useReadDeck();
   const [flipped, setFlipped] = useState(false);
   const [currentCardIndex, setCurrentCardIndex] = useState(0);
 

@@ -4,7 +4,7 @@ import { LoadingIndicator } from "./LoadingIndicator";
 import { useReadDeck } from "../utils/hooks";
 
 export function NewCardPage() {
-  const deck = useReadDeck();
+  const [deck] = useReadDeck();
 
   if (!deck) {
     return <LoadingIndicator />;

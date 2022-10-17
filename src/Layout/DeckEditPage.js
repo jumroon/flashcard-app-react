@@ -7,7 +7,7 @@ import { updateDeck } from "../utils/api";
 
 export function DeckEditPage() {
   const history = useHistory();
-  const deck = useReadDeck();
+  const [deck, setDeck] = useReadDeck();
 
   if (!deck) {
     return <LoadingIndicator />;
@@ -22,7 +22,17 @@ export function DeckEditPage() {
     returnToDeckPage();
   }
 
+  const handleChange = (event) => {
+    const { target } = event;
+    setDeck({ ...deck, [target.id]: target.value });
+  };
+
   return (
-    <DeckForm deck={deck} onCancel={returnToDeckPage} onSubmit={onSubmit} />
+    <DeckForm
+      deck={deck}
+      onCancel={returnToDeckPage}
+      onSubmit={onSubmit}
+      handleChange={handleChange}
+    />
   );
 }

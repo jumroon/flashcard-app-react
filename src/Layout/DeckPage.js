@@ -3,7 +3,7 @@ import { useReadDeck } from "../utils/hooks";
 import { LoadingIndicator } from "./LoadingIndicator";
 
 export function DeckPage() {
-  const deck = useReadDeck();
+  const [deck] = useReadDeck();
 
   if (!deck) {
     return <LoadingIndicator />;
