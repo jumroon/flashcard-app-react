@@ -3,6 +3,7 @@ import { useReadDeck } from "../utils/hooks";
 import { DeckForm } from "./DeckForm";
 import { LoadingIndicator } from "./LoadingIndicator";
 import { useHistory } from "react-router-dom";
+import { updateDeck } from "../utils/api";
 
 export function DeckEditPage() {
   const history = useHistory();
@@ -12,10 +13,16 @@ export function DeckEditPage() {
     return <LoadingIndicator />;
   }
 
-  console.log(deck.id);
-  function onCancel() {
+  function returnToDeckPage() {
     history.push(`/decks/${deck.id}`);
   }
 
-  return <DeckForm deck={deck} onCancel={onCancel} />;
+  async function onSubmit(event) {
+    const updatedDeck = await updateDeck(deck);
+    returnToDeckPage();
+  }
+
+  return (
+    <DeckForm deck={deck} onCancel={returnToDeckPage} onSubmit={onSubmit} />
+  );
 }
