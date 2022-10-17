@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 import Deck from "./Deck";
 import { listDecks } from "../utils/api";
+import { StudyPage } from "./StudyPage";
 
 export function HomePage() {
   const [decks, setDecks] = useState([]);
@@ -17,7 +19,7 @@ export function HomePage() {
   const deckNames = decks.map((deck, index) => (
     <>
       <Deck deckName={deck.name} listOfCards={deck.cards} key={index} />
-      <button>Study</button>
+      <Link to={`/decks/${index + 1}/study`}>Study</Link>
     </>
   ));
 
