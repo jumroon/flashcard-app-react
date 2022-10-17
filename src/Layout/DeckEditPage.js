@@ -17,8 +17,8 @@ export function DeckEditPage() {
     history.push(`/decks/${deck.id}`);
   }
 
-  async function onSubmit(event) {
-    const updatedDeck = await updateDeck(deck);
+  async function onSubmit() {
+    await updateDeck(deck);
     returnToDeckPage();
   }
 
