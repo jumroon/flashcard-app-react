@@ -1,13 +1,16 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { readDeck } from "../utils/api";
+import { createDeck } from "../utils/api";
 import { DeckForm } from "./DeckForm";
 
 export function NewDeckPage() {
-  const [deck, setDeck] = useState({});
+  const [deck, setDeck] = useState({
+    name: "",
+    description: "",
+  });
 
-  function onSubmit() {
-    console.log("DECKDECKDECK");
+  async function onSubmit() {
+    const createdDeck = await createDeck(deck);
   }
 
   const handleChange = (event) => {
