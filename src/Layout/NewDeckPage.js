@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import { createDeck } from "../utils/api";
 import { DeckForm } from "./DeckForm";
 
@@ -8,9 +8,11 @@ export function NewDeckPage() {
     name: "",
     description: "",
   });
+  const history = useHistory();
 
   async function onSubmit() {
     const createdDeck = await createDeck(deck);
+    history.push(`/decks/${createdDeck.id}`);
   }
 
   const handleChange = (event) => {
