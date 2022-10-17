@@ -20,6 +20,7 @@ export function HomePage() {
     <>
       <Deck deckName={deck.name} listOfCards={deck.cards} key={index} />
       <Link to={`/decks/${index + 1}/study`}>Study</Link>
+      <Link to={`/decks/${index + 1}/edit`}> Edit</Link>
     </>
   ));
 
