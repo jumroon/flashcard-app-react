@@ -15,7 +15,10 @@ export function HomePage() {
   }, []);
 
   const deckNames = decks.map((deck, index) => (
-    <Deck deckName={deck.name} listOfCards={deck.cards} key={index} />
+    <>
+      <Deck deckName={deck.name} listOfCards={deck.cards} key={index} />
+      <button>Study</button>
+    </>
   ));
 
   return (
