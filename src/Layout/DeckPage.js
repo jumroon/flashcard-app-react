@@ -24,8 +24,10 @@ export function DeckPage() {
   return (
     <div>
       <h1>{deck.name}</h1>
-      {/* may need to move deck description to a different component later*/}
+
       <h2>{deck.description}</h2>
+      <button>DELETE</button>
+      <button>Edit</button>
       <div>
         <h2>{cardFronts}</h2>
       </div>
