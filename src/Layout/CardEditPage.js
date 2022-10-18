@@ -1,7 +1,7 @@
 import React from "react";
 import { useReadDeck } from "../utils/hooks";
 import { LoadingIndicator } from "./LoadingIndicator";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 
 export function CardEditPage() {
   const { cardId } = useParams();
@@ -21,6 +21,10 @@ export function CardEditPage() {
       <textarea value={cardWeWant.front}></textarea>
       <h3>Back</h3>
       <textarea value={cardWeWant.back}></textarea>
+      <Link to={`/decks/${deck.id}`}>
+        <button>Cancel</button>
+        <button>Submit</button>
+      </Link>
     </>
   );
 }
