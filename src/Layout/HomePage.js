@@ -26,6 +26,7 @@ export function HomePage() {
       <Link to={`/decks/${index + 1}/edit`}>
         <button>Edit</button>
       </Link>
+      <button>Delete</button>
     </>
   ));
 
