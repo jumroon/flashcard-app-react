@@ -16,7 +16,7 @@ export function DeckPage() {
       <form key={index} style={{ marginTop: 100 }}>
         <h2>{card.front}</h2>
         <h2>{card.back}</h2>
-        <button>DELETE1111</button>
+        <button>DELETE</button>
         <Link to={`/decks/${deck.id}/cards/${index + 1}/edit`}>
           <button>Edit</button>
         </Link>
@@ -30,6 +30,8 @@ export function DeckPage() {
       <h2>{deck.description}</h2>
       <button>DELETE</button>
       <button>Edit</button>
+      <button>Study</button>
+      <button>+ Add Cards</button>
       <div>
         <h2>{cardFronts}</h2>
       </div>
