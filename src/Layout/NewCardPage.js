@@ -2,6 +2,7 @@ import React from "react";
 import { Breadcrumbs } from "./Breadcrumbs";
 import { LoadingIndicator } from "./LoadingIndicator";
 import { useReadDeck } from "../utils/hooks";
+import CardForm from "./CardForm__TEMPLATE";
 
 export function NewCardPage() {
   const [deck] = useReadDeck();
@@ -13,6 +14,7 @@ export function NewCardPage() {
   return (
     <>
       <Breadcrumbs />
+
       <h1>I am a happy card page lol</h1>
       <h3>{deck.name}</h3>
 
