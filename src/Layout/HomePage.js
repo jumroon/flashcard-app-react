@@ -41,7 +41,7 @@ export function HomePage() {
       <Link to={`/decks/${index + 1}/edit`}>
         <button>Edit</button>
       </Link>
-      <button onClick={() => deleteHandler(deck.id)}>Delete1111</button>
+      <button onClick={() => deleteHandler(deck.id)}>Delete</button>
     </>
   ));
 
