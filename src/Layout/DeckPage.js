@@ -24,13 +24,26 @@ export function DeckPage() {
     }
   };
 
+  const deleteCardHandler = async (cardId) => {
+    if (
+      window.confirm(
+        "Are you sure you want to delete this card? You will not be able to recover it."
+      )
+    ) {
+      await deleteCard(cardId);
+      history.go(0);
+    } else {
+      history.go(0);
+    }
+  };
+
   const cards = deck.cards;
   const cardFronts = cards.map((card, index) => {
     return (
       <form key={index} style={{ marginTop: 100 }}>
         <h2>{card.front}</h2>
         <h2>{card.back}</h2>
-        <button>DELETE</button>
+        <button onClick={() => deleteCardHandler(card.id)}>DELETE</button>
         <Link to={`/decks/${deck.id}/cards/${card.id}/edit`}>
           <button>Edit</button>
         </Link>
