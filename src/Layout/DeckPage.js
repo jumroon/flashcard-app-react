@@ -56,7 +56,9 @@ export function DeckPage() {
       <h1>{deck.name}</h1>
       <h2>{deck.description}</h2>
       <button onClick={() => deleteDeckHandler(deck.id)}>DELETE</button>
-      <button>Edit</button>
+      <Link to={`/decks/${deck.id}/edit`}>
+        <button>Edit</button>
+      </Link>
       <button>Study</button>
       <button>+ Add Cards</button>
       <div>
