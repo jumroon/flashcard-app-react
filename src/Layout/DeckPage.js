@@ -2,7 +2,7 @@ import React from "react";
 import { useReadDeck } from "../utils/hooks";
 import { LoadingIndicator } from "./LoadingIndicator";
 import { Link, useHistory } from "react-router-dom";
-import { deleteDeck, deleteCard, createCard } from "../utils/api";
+import { deleteDeck, deleteCard } from "../utils/api";
 
 export function DeckPage() {
   const [deck] = useReadDeck();

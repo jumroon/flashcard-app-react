@@ -12,7 +12,7 @@ export const useReadDeck = () => {
       setDeck(newDeck);
     }
     getDeck();
-  }, []);
+  }, [deckId]);
 
   return [deck, setDeck];
 };

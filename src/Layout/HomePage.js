@@ -1,10 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link, useHistory } from "react-router-dom";
-import { useReadDeck } from "../utils/hooks";
 import Deck from "./Deck";
-import { listDecks, deleteDeck, updateDeck } from "../utils/api";
-import { StudyPage } from "./StudyPage";
-import { LoadingIndicator } from "./LoadingIndicator";
+import { listDecks, deleteDeck } from "../utils/api";
 
 export function HomePage() {
   const [decks, setDecks] = useState([]);

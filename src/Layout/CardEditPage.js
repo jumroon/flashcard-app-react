@@ -12,10 +12,10 @@ export function CardEditPage() {
 
   useEffect(() => {
     if (deck) {
-      const cardWeWant = deck.cards.find((card) => card.id == cardId);
+      const cardWeWant = deck.cards.find((card) => `${card.id}` === cardId);
       setCard(cardWeWant);
     }
-  }, [deck]);
+  }, [deck, cardId]);
 
   if (!deck || !card) {
     return <LoadingIndicator />;

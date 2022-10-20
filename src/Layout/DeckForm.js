@@ -1,6 +1,4 @@
-import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
-import { readDeck } from "../utils/api";
+import React from "react";
 
 export function DeckForm({ deck, onSubmit, handleChange, onCancel }) {
   return (
