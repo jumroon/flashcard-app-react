@@ -56,6 +56,75 @@
       "back": "Renders the first matching child <Route> ",
       "deckId": 2,
       "id": 5
+    },
+    {
+      "0": {
+        "id": 1,
+        "front": "Differentiate between Real DOM and Virtual DOM.",
+        "back": "Virtual DOM updates are faster but do not directly update the HTML",
+        "deckId": 1
+      },
+      "1": {
+        "id": 2,
+        "front": "How do you modify the state of a different React component?",
+        "back": "Not at all! State is visible to the component only.",
+        "deckId": 1
+      },
+      "2": {
+        "id": 3,
+        "front": "How do you pass data 'down' to a React child component?",
+        "back": "As properties or props",
+        "deckId": 1
+      },
+      "back": "dsfsdf",
+      "deckId": 1,
+      "id": 6
+    },
+    {
+      "0": {
+        "id": 1,
+        "front": "Differentiate between Real DOM and Virtual DOM.",
+        "back": "Virtual DOM updates are faster but do not directly update the HTML",
+        "deckId": 1
+      },
+      "1": {
+        "id": 2,
+        "front": "How do you modify the state of a different React component?",
+        "back": "Not at all! State is visible to the component only.",
+        "deckId": 1
+      },
+      "2": {
+        "id": 3,
+        "front": "How do you pass data 'down' to a React child component?",
+        "back": "As properties or props",
+        "deckId": 1
+      },
+      "3": {
+        "0": {
+          "id": 1,
+          "front": "Differentiate between Real DOM and Virtual DOM.",
+          "back": "Virtual DOM updates are faster but do not directly update the HTML",
+          "deckId": 1
+        },
+        "1": {
+          "id": 2,
+          "front": "How do you modify the state of a different React component?",
+          "back": "Not at all! State is visible to the component only.",
+          "deckId": 1
+        },
+        "2": {
+          "id": 3,
+          "front": "How do you pass data 'down' to a React child component?",
+          "back": "As properties or props",
+          "deckId": 1
+        },
+        "back": "dsfsdf",
+        "deckId": 1,
+        "id": 6
+      },
+      "back": "sfsdsfsf",
+      "deckId": 1,
+      "id": 7
     }
   ]
 }
