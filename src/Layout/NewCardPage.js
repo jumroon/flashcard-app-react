@@ -12,7 +12,6 @@ export function NewCardPage() {
   if (!deck) {
     return <LoadingIndicator />;
   }
-  const cards = deck.cards;
   async function addCard() {
     await createCard(deck.id, card);
     history.go(0);
@@ -20,10 +19,9 @@ export function NewCardPage() {
 
   const handleChange = (event) => {
     const { target } = event;
-    setCard({ ...cards, [target.id]: target.value });
+    setCard({ ...card, [target.id]: target.value });
   };
 
-  console.log("DECK AND CARDS LABEL", deck, deck.cards);
   return (
     <>
       <Breadcrumbs />
