@@ -59,7 +59,9 @@ export function DeckPage() {
       <Link to={`/decks/${deck.id}/edit`}>
         <button>Edit</button>
       </Link>
-      <button>Study</button>
+      <Link to={`/decks/${deck.id}/study`}>
+        <button>Study</button>
+      </Link>
       <button>+ Add Cards</button>
       <div>
         <h2>{cardFronts}</h2>
