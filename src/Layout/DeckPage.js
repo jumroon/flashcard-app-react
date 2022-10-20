@@ -1,14 +1,28 @@
 import React from "react";
 import { useReadDeck } from "../utils/hooks";
 import { LoadingIndicator } from "./LoadingIndicator";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
+import { deleteDeck, deleteCard } from "../utils/api";
 
 export function DeckPage() {
   const [deck] = useReadDeck();
+  const history = useHistory();
 
   if (!deck) {
     return <LoadingIndicator />;
   }
+  const deleteDeckHandler = async (deckId) => {
+    if (
+      window.confirm(
+        "Are you sure you want to delete this deck? You will not be able to recover it."
+      )
+    ) {
+      await deleteDeck(deckId);
+      history.go(0);
+    } else {
+      history.go(0);
+    }
+  };
 
   const cards = deck.cards;
   const cardFronts = cards.map((card, index) => {
@@ -17,7 +31,7 @@ export function DeckPage() {
         <h2>{card.front}</h2>
         <h2>{card.back}</h2>
         <button>DELETE</button>
-        <Link to={`/decks/${deck.id}/cards/${index + 1}/edit`}>
+        <Link to={`/decks/${deck.id}/cards/${card.id}/edit`}>
           <button>Edit</button>
         </Link>
       </form>
@@ -28,7 +42,7 @@ export function DeckPage() {
     <div>
       <h1>{deck.name}</h1>
       <h2>{deck.description}</h2>
-      <button>DELETE</button>
+      <button onClick={() => deleteDeckHandler(deck.id)}>DELETE</button>
       <button>Edit</button>
       <button>Study</button>
       <button>+ Add Cards</button>
