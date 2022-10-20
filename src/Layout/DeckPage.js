@@ -2,7 +2,7 @@ import React from "react";
 import { useReadDeck } from "../utils/hooks";
 import { LoadingIndicator } from "./LoadingIndicator";
 import { Link, useHistory } from "react-router-dom";
-import { deleteDeck, deleteCard } from "../utils/api";
+import { deleteDeck, deleteCard, createCard } from "../utils/api";
 
 export function DeckPage() {
   const [deck] = useReadDeck();
@@ -62,7 +62,9 @@ export function DeckPage() {
       <Link to={`/decks/${deck.id}/study`}>
         <button>Study</button>
       </Link>
-      <button>+ Add Cards</button>
+      <Link to={`/decks/${deck.id}/cards/new`}>
+        <button>+ Add Cards</button>
+      </Link>
       <div>
         <h2>{cardFronts}</h2>
       </div>
