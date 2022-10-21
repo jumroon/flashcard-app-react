@@ -3,6 +3,7 @@ import { useReadDeck } from "../utils/hooks";
 import { LoadingIndicator } from "./LoadingIndicator";
 import { useParams, Link, useHistory } from "react-router-dom";
 import { updateCard } from "../utils/api";
+import CardForm from "./CardForm";
 
 export function CardEditPage() {
   const { cardId } = useParams();
@@ -34,7 +35,7 @@ export function CardEditPage() {
 
   return (
     <>
-      <form onSubmit={(event) => onSubmit(event)}>
+      {/* <form onSubmit={(event) => onSubmit(event)}>
         <h1>Edit Card</h1>
         <h3>Front</h3>
         <textarea
@@ -50,7 +51,14 @@ export function CardEditPage() {
           <button>Cancel</button>
         </Link>
         <button>Submit</button>
-      </form>
+      </form> */}
+      <CardForm
+        card={card}
+        deck={deck}
+        deckId={deck.id}
+        submitForm={onSubmit}
+        changeForm={handleChange}
+      />
     </>
   );
 }
