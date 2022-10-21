@@ -3,7 +3,7 @@ import { Breadcrumbs } from "./Breadcrumbs";
 import { LoadingIndicator } from "./LoadingIndicator";
 import { useReadDeck } from "../utils/hooks";
 import { createCard } from "../utils/api";
-import { useHistory, Link } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import CardForm from "./CardForm";
 export function NewCardPage() {
   const [deck] = useReadDeck();
